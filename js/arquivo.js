@@ -4,13 +4,12 @@ function adicionarTarefa() {
     const novaTarefaInput = document.getElementById("novaTarefa");
     const novaTarefa = novaTarefaInput.value; // Pega o valor do input
 
-    if (novaTarefa) { // Só adiciona se tiver algo digitado
+    if (novaTarefa) { /// Só adiciona se tiver algo digitado
         tarefas.push(`Tarefa ${novaTarefa} `); // Adiciona no array
         novaTarefaInput.value = ""; // Limpa o input
 
         mostrarTarefas(); // Atualiza a lista de tarefas
     }
-    
 }
 
 function mostrarTarefas() {
@@ -19,6 +18,7 @@ function mostrarTarefas() {
 
     for (let i = 0; i < tarefas.length; i++) {
         const li = document.createElement("li"); // Cria um item da lista
+        li.className = "tarefa-item"; // Adiciona uma classe para o estilo CSS
 
         const tarefaSpan = document.createElement("span"); // Cria um elemento span
         tarefaSpan.textContent = tarefas[i]; // Põe o texto da tarefa
